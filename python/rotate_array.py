@@ -5,9 +5,4 @@ from typing import List
 
 class Solution:
     def rotate(self, nums: List[int], k: int) -> None:
-        """
-        Do not return anything, modify nums in-place instead.
-        """
-        part1 = nums[k:]
-        part2 = nums[:len(nums) - k]
-        nums[:] = part2 + part1
+        nums[:] = nums[-k:] + nums[:-k]
